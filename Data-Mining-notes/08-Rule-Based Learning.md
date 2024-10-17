@@ -1,22 +1,22 @@
 ### Overview
 A **rule-based classifier** classifies records using a collection of "if...then..." rules. Each rule is of the form:
-- **Rule**: ![LaTeX Equation](https://latex.codecogs.com/png.latex?%28%5Ctext%7BCondition%7D%29%20%5Crightarrow%20y)
+- **Rule**: ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%28%5Ctext%7BCondition%7D%29%20%5Crightarrow%20y&bg=transparent)
    - **Condition**: A conjunction of attribute tests.
-   - **![LaTeX Equation](https://latex.codecogs.com/png.latex?y)**: The class label.
+   - **![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20y&bg=transparent)**: The class label.
 
 #### Example of Rules:
-- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%28%5Ctext%7BGive%20Birth%7D%20%3D%20%5Ctext%7Bno%7D%29%20%5Cland%20%28%5Ctext%7BCan%20Fly%7D%20%3D%20%5Ctext%7Byes%7D%29%20%5Crightarrow%20%5Ctext%7BBirds%7D)
-- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%28%5Ctext%7BTaxable%20Income%7D%20%3C%2050K%29%20%5Cland%20%28%5Ctext%7BRefund%7D%20%3D%20%5Ctext%7BYes%7D%29%20%5Crightarrow%20%5Ctext%7BEvade%7D%20%3D%20%5Ctext%7BNo%7D)
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%28%5Ctext%7BGive%20Birth%7D%20%3D%20%5Ctext%7Bno%7D%29%20%5Cland%20%28%5Ctext%7BCan%20Fly%7D%20%3D%20%5Ctext%7Byes%7D%29%20%5Crightarrow%20%5Ctext%7BBirds%7D&bg=transparent)
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%28%5Ctext%7BTaxable%20Income%7D%20%3C%2050K%29%20%5Cland%20%28%5Ctext%7BRefund%7D%20%3D%20%5Ctext%7BYes%7D%29%20%5Crightarrow%20%5Ctext%7BEvade%7D%20%3D%20%5Ctext%7BNo%7D&bg=transparent)
 
 ---
 
 ## Rule Characteristics
 
 1. **Coverage**: The fraction of records that satisfy the condition of the rule.
-   - Example: For the rule ![LaTeX Equation](https://latex.codecogs.com/png.latex?%28%5Ctext%7BStatus%7D%20%3D%20%5Ctext%7BSingle%7D%29%20%5Crightarrow%20%5Ctext%7BNo%7D), coverage could be ![LaTeX Equation](https://latex.codecogs.com/png.latex?40%5C%25).
+   - Example: For the rule ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%28%5Ctext%7BStatus%7D%20%3D%20%5Ctext%7BSingle%7D%29%20%5Crightarrow%20%5Ctext%7BNo%7D&bg=transparent), coverage could be ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%2040%5C%25&bg=transparent).
    
 2. **Accuracy**: The fraction of records satisfying the condition that also satisfy the conclusion.
-   - Example: Accuracy of ![LaTeX Equation](https://latex.codecogs.com/png.latex?50%5C%25) means half of the records meeting the condition also match the class label.
+   - Example: Accuracy of ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%2050%5C%25&bg=transparent) means half of the records meeting the condition also match the class label.
 ![Image](images/image_20241017160414.png)
 ---
 
@@ -75,8 +75,8 @@ A **rule-based classifier** classifies records using a collection of "if...then.
 For a two-class problem, one class is treated as positive, and the other as negative. RIPPER builds the rule set for the positive class first:
 1. **Rule Growing**: Start with an empty rule and add conditions as long as they improve FOIL’s information gain.
 2. **Pruning**: Remove unnecessary conditions using **incremental reduced error pruning**. The pruning criterion is:
-   ![LaTeX Equation](https://latex.codecogs.com/png.latex?%20v%20%3D%20%5Cfrac%7Bp%20-%20n%7D%7Bp%20%2B%20n%7D%20)
-   where ![LaTeX Equation](https://latex.codecogs.com/png.latex?p) is the number of positive examples and ![LaTeX Equation](https://latex.codecogs.com/png.latex?n) is the number of negative examples covered by the rule.
+   ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20v%20%3D%20%5Cfrac%7Bp%20-%20n%7D%7Bp%20%2B%20n%7D%20&bg=transparent)
+   where ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20p&bg=transparent) is the number of positive examples and ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20n&bg=transparent) is the number of negative examples covered by the rule.
 - **Pruning method**: delete any final sequence of conditions that maximizes v
 ![Image](images/image_20241017161316.png)
 
@@ -84,7 +84,7 @@ For a two-class problem, one class is treated as positive, and the other as nega
 
 ## Indirect Method: C4.5rules
 
-This method extracts rules from an unpruned decision tree. For each rule ![LaTeX Equation](https://latex.codecogs.com/png.latex?r%3A%20A%20%5Crightarrow%20y), alternative rules ![LaTeX Equation](https://latex.codecogs.com/png.latex?r%27%3A%20A%27%20%5Crightarrow%20y) are considered, where ![LaTeX Equation](https://latex.codecogs.com/png.latex?A%27) removes one conjunct from ![LaTeX Equation](https://latex.codecogs.com/png.latex?A). The rule with the lowest pessimistic error is selected.
+This method extracts rules from an unpruned decision tree. For each rule ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20r%3A%20A%20%5Crightarrow%20y&bg=transparent), alternative rules ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20r%27%3A%20A%27%20%5Crightarrow%20y&bg=transparent) are considered, where ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20A%27&bg=transparent) removes one conjunct from ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20A&bg=transparent). The rule with the lowest pessimistic error is selected.
 
 ---
 

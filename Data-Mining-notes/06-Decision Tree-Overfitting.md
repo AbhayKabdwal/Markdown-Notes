@@ -35,11 +35,11 @@ Using irrelevant attributes (e.g., 100 noisy variables from a uniform distributi
 ---
 ## Effect of Multiple Comparison Procedure
 -  Many algorithms employ the following greedy strategy:
-– Initial model: ![LaTeX Equation](https://latex.codecogs.com/png.latex?M)
-– Alternative model: ![LaTeX Equation](https://latex.codecogs.com/png.latex?M%E2%80%99%20%3D%20M%20%E2%88%AA%20%CE%B3)
+– Initial model: ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20M&bg=transparent)
+– Alternative model: ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20M%E2%80%99%20%3D%20M%20%E2%88%AA%20%CE%B3&bg=transparent)
 where γ is a component to be added to the model (e.g., a test condition of a decision tree)
-– Keep M’ if improvement, ![LaTeX Equation](https://latex.codecogs.com/png.latex?%CE%94%28M%2CM%E2%80%99%29%20%3E%20%CE%B1)
-- Often times, γ is chosen from a set of alternative components, ![LaTeX Equation](https://latex.codecogs.com/png.latex?%CE%93%20%3D%20%5C%7B%7B%CE%B3_%7B1%7D%20%2C%20%CE%B3_%7B2%7D%20%2C%20%E2%80%A6%2C%0A%CE%B3_%7Bk%7D%20%7D%5C%7D)
+– Keep M’ if improvement, ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%CE%94%28M%2CM%E2%80%99%29%20%3E%20%CE%B1&bg=transparent)
+- Often times, γ is chosen from a set of alternative components, ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%CE%93%20%3D%20%5C%7B%7B%CE%B3_%7B1%7D%20%2C%20%CE%B3_%7B2%7D%20%2C%20%E2%80%A6%2C%0A%CE%B3_%7Bk%7D%20%7D%5C%7D&bg=transparent)
 - If many alternatives are available, one may inadvertently add irrelevant
 components to the model, resulting in model overfitting
 ## Addressing Overfitting: Model Selection
@@ -51,7 +51,7 @@ components to the model, resulting in model overfitting
    - The principle of **Occam’s Razor** states that, given two models with similar generalization errors, the simpler model should be preferred. Complex models have a higher chance of overfitting.
 
 #### General Error Formula:
-![LaTeX Equation](https://latex.codecogs.com/png.latex?%20%5Ctext%7BGen.%20Error%7D%28%5Ctext%7BModel%7D%29%20%3D%20%5Ctext%7BTrain.%20Error%7D%28%5Ctext%7BModel%2C%20Train.%20Data%7D%29%20%2B%20%5Clambda%20%5Ctimes%20%5Ctext%7BComplexity%7D%28%5Ctext%7BModel%7D%29%20)
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20%5Ctext%7BGen.%20Error%7D%28%5Ctext%7BModel%7D%29%20%3D%20%5Ctext%7BTrain.%20Error%7D%28%5Ctext%7BModel%2C%20Train.%20Data%7D%29%20%2B%20%5Clambda%20%5Ctimes%20%5Ctext%7BComplexity%7D%28%5Ctext%7BModel%7D%29%20&bg=transparent)
 ![Image](images/image_20241017171801.png)
 
 ---
@@ -62,7 +62,7 @@ components to the model, resulting in model overfitting
    - Stop tree growth early if:
      - All instances belong to the same class.
      - Attribute values for all instances are identical.
-     - Class distribution does not improve with further splitting (e.g., using ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Cchi%5E2) test or Gini index).
+     - Class distribution does not improve with further splitting (e.g., using ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%5Cchi%5E2&bg=transparent) test or Gini index).
 
 2. **Post-Pruning**:
    - Build the tree fully and then prune:
@@ -77,12 +77,12 @@ components to the model, resulting in model overfitting
 ## Model Evaluation
 
 1. **Holdout Method**: 
-   - Reserve a portion of the dataset (e.g., ![LaTeX Equation](https://latex.codecogs.com/png.latex?k%5C%25)) for training and the rest for testing.
+   - Reserve a portion of the dataset (e.g., ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20k%5C%25&bg=transparent)) for training and the rest for testing.
 
 2. **Cross-Validation**:
-   - Split the data into ![LaTeX Equation](https://latex.codecogs.com/png.latex?k) disjoint subsets. Train on ![LaTeX Equation](https://latex.codecogs.com/png.latex?k-1) subsets and test on the remaining subset. Repeat this ![LaTeX Equation](https://latex.codecogs.com/png.latex?k) times for each subset. Common values for ![LaTeX Equation](https://latex.codecogs.com/png.latex?k) include 5 and 10 (e.g., **k-fold cross-validation**).
+   - Split the data into ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20k&bg=transparent) disjoint subsets. Train on ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20k-1&bg=transparent) subsets and test on the remaining subset. Repeat this ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20k&bg=transparent) times for each subset. Common values for ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20k&bg=transparent) include 5 and 10 (e.g., **k-fold cross-validation**).
 3. **Leave-One-Out Cross-Validation (LOOCV)**:
-   - A special case of cross-validation where ![LaTeX Equation](https://latex.codecogs.com/png.latex?k%20%3D%20n), where ![LaTeX Equation](https://latex.codecogs.com/png.latex?n) is the number of data points. The model is trained on all data except one point, and this is repeated for all points.
+   - A special case of cross-validation where ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20k%20%3D%20n&bg=transparent), where ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20n&bg=transparent) is the number of data points. The model is trained on all data except one point, and this is repeated for all points.
 
 4. **Stratified Cross-Validation**:
    - Ensures that each fold has the same class distribution as the full dataset, which is especially useful for imbalanced data.

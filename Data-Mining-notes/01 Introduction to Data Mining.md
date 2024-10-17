@@ -34,7 +34,7 @@ The classifier might use algorithms such as:
 - **k-Nearest Neighbors**
 
 #### Mathematical Representation:
-Let ![LaTeX Equation](https://latex.codecogs.com/png.latex?D) represent the dataset, ![LaTeX Equation](https://latex.codecogs.com/png.latex?x_i) the features of data point ![LaTeX Equation](https://latex.codecogs.com/png.latex?i), and ![LaTeX Equation](https://latex.codecogs.com/png.latex?y_i) the class label. A classifier ![LaTeX Equation](https://latex.codecogs.com/png.latex?f%28x_i%29%20%3D%20y_i) predicts the class label ![LaTeX Equation](https://latex.codecogs.com/png.latex?y_i) for unseen data.
+Let ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20D&bg=transparent) represent the dataset, ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20x_i&bg=transparent) the features of data point ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20i&bg=transparent), and ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20y_i&bg=transparent) the class label. A classifier ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20f%28x_i%29%20%3D%20y_i&bg=transparent) predicts the class label ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20y_i&bg=transparent) for unseen data.
 
 ---
 
@@ -42,9 +42,9 @@ Let ![LaTeX Equation](https://latex.codecogs.com/png.latex?D) represent the data
 Regression is used to predict continuous values (also a form of supervised learning). For example, predicting house prices based on features such as location, size, and age.
 
 #### Example:
-To predict house prices (![LaTeX Equation](https://latex.codecogs.com/png.latex?Y)), we can build a regression model:
-![LaTeX Equation](https://latex.codecogs.com/png.latex?%20Y%20%3D%20%5Cbeta_0%20%2B%20%5Cbeta_1%20X_1%20%2B%20%5Cbeta_2%20X_2%20%2B%20%5Ccdots%20%2B%20%5Cbeta_n%20X_n%20)
-Where ![LaTeX Equation](https://latex.codecogs.com/png.latex?X_1%2C%20X_2%2C%20%5Cdots%2C%20X_n) are input features (such as square footage, number of bedrooms, etc.), and ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Cbeta_0%2C%20%5Cbeta_1%2C%20%5Cdots%2C%20%5Cbeta_n) are the model coefficients.
+To predict house prices (![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20Y&bg=transparent)), we can build a regression model:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20Y%20%3D%20%5Cbeta_0%20%2B%20%5Cbeta_1%20X_1%20%2B%20%5Cbeta_2%20X_2%20%2B%20%5Ccdots%20%2B%20%5Cbeta_n%20X_n%20&bg=transparent)
+Where ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20X_1%2C%20X_2%2C%20%5Cdots%2C%20X_n&bg=transparent) are input features (such as square footage, number of bedrooms, etc.), and ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%5Cbeta_0%2C%20%5Cbeta_1%2C%20%5Cdots%2C%20%5Cbeta_n&bg=transparent) are the model coefficients.
 
 ---
 
@@ -55,8 +55,8 @@ Clustering is an unsupervised learning technique used to group similar data poin
 In market segmentation, customers can be grouped into clusters based on purchasing behavior, demographics, etc.
 
 #### Mathematical Representation:
-The goal of clustering is to minimize intra-cluster distance while maximizing inter-cluster distance. For instance, in **K-means clustering**, each cluster center ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Cmu_k) is computed to minimize the squared distance from each data point ![LaTeX Equation](https://latex.codecogs.com/png.latex?x_i) to its nearest cluster center:
-![LaTeX Equation](https://latex.codecogs.com/png.latex?%20%5Ctext%7Bminimize%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bk%3D1%7D%5E%7BK%7D%20%5Cmathbf%7B1%7D%28x_i%20%5Cin%20C_k%29%20%5C%7C%20x_i%20-%20%5Cmu_k%20%5C%7C%5E2%20)
+The goal of clustering is to minimize intra-cluster distance while maximizing inter-cluster distance. For instance, in **K-means clustering**, each cluster center ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%5Cmu_k&bg=transparent) is computed to minimize the squared distance from each data point ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20x_i&bg=transparent) to its nearest cluster center:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20%5Ctext%7Bminimize%7D%20%5Csum_%7Bi%3D1%7D%5E%7Bn%7D%20%5Csum_%7Bk%3D1%7D%5E%7BK%7D%20%5Cmathbf%7B1%7D%28x_i%20%5Cin%20C_k%29%20%5C%7C%20x_i%20-%20%5Cmu_k%20%5C%7C%5E2%20&bg=transparent)
 
 ---
 
@@ -64,15 +64,15 @@ The goal of clustering is to minimize intra-cluster distance while maximizing in
 Association rules discover relationships between variables in large datasets. These rules help find items that frequently co-occur, such as in market basket analysis (e.g., people who buy bread also tend to buy butter).
 
 #### Example:
-For a set of items ![LaTeX Equation](https://latex.codecogs.com/png.latex?I) and transactions ![LaTeX Equation](https://latex.codecogs.com/png.latex?T), an association rule can be expressed as:
-![LaTeX Equation](https://latex.codecogs.com/png.latex?%20A%20%5CRightarrow%20B%20)
-Where ![LaTeX Equation](https://latex.codecogs.com/png.latex?A) and ![LaTeX Equation](https://latex.codecogs.com/png.latex?B) are itemsets, and the rule indicates that if ![LaTeX Equation](https://latex.codecogs.com/png.latex?A) is purchased, ![LaTeX Equation](https://latex.codecogs.com/png.latex?B) is likely to be purchased as well.
+For a set of items ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20I&bg=transparent) and transactions ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20T&bg=transparent), an association rule can be expressed as:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20A%20%5CRightarrow%20B%20&bg=transparent)
+Where ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20A&bg=transparent) and ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20B&bg=transparent) are itemsets, and the rule indicates that if ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20A&bg=transparent) is purchased, ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20B&bg=transparent) is likely to be purchased as well.
 
 The key measures for association rules include:
 - **Support:** The frequency of the itemset in the dataset.
-![LaTeX Equation](https://latex.codecogs.com/png.latex?%20%5Ctext%7BSupport%7D%28A%29%20%3D%20%5Cfrac%7B%7CT%28A%29%7C%7D%7B%7CT%7C%7D%20)
-- **Confidence:** The likelihood of ![LaTeX Equation](https://latex.codecogs.com/png.latex?B) being purchased when ![LaTeX Equation](https://latex.codecogs.com/png.latex?A) is purchased.
-![LaTeX Equation](https://latex.codecogs.com/png.latex?%20%5Ctext%7BConfidence%7D%28A%20%5CRightarrow%20B%29%20%3D%20%5Cfrac%7B%5Ctext%7BSupport%7D%28A%20%5Ccup%20B%29%7D%7B%5Ctext%7BSupport%7D%28A%29%7D%20)
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20%5Ctext%7BSupport%7D%28A%29%20%3D%20%5Cfrac%7B%7CT%28A%29%7C%7D%7B%7CT%7C%7D%20&bg=transparent)
+- **Confidence:** The likelihood of ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20B&bg=transparent) being purchased when ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20A&bg=transparent) is purchased.
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ccolor%7Bwhite%7D%20%20%5Ctext%7BConfidence%7D%28A%20%5CRightarrow%20B%29%20%3D%20%5Cfrac%7B%5Ctext%7BSupport%7D%28A%20%5Ccup%20B%29%7D%7B%5Ctext%7BSupport%7D%28A%29%7D%20&bg=transparent)
 
 ---
 
