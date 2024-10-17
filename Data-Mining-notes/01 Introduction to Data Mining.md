@@ -43,7 +43,9 @@ Regression is used to predict continuous values (also a form of supervised learn
 
 #### Example:
 To predict house prices ($Y$), we can build a regression model:
-$$ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n $$
+$$
+ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n 
+$$
 Where $X_1, X_2, \dots, X_n$ are input features (such as square footage, number of bedrooms, etc.), and $\beta_0, \beta_1, \dots, \beta_n$ are the model coefficients.
 
 ---
@@ -56,7 +58,9 @@ In market segmentation, customers can be grouped into clusters based on purchasi
 
 #### Mathematical Representation:
 The goal of clustering is to minimize intra-cluster distance while maximizing inter-cluster distance. For instance, in **K-means clustering**, each cluster center $\mu_k$ is computed to minimize the squared distance from each data point $x_i$ to its nearest cluster center:
-$$ \text{minimize} \sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}(x_i \in C_k) \| x_i - \mu_k \|^2 $$
+$$
+ \text{minimize} \sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}(x_i \in C_k) \| x_i - \mu_k \|^2 
+$$
 
 ---
 
@@ -65,14 +69,20 @@ Association rules discover relationships between variables in large datasets. Th
 
 #### Example:
 For a set of items $I$ and transactions $T$, an association rule can be expressed as:
-$$ A \Rightarrow B $$
+$$
+ A \Rightarrow B 
+$$
 Where $A$ and $B$ are itemsets, and the rule indicates that if $A$ is purchased, $B$ is likely to be purchased as well.
 
 The key measures for association rules include:
 - **Support:** The frequency of the itemset in the dataset.
-$$ \text{Support}(A) = \frac{|T(A)|}{|T|} $$
+$$
+ \text{Support}(A) = \frac{|T(A)|}{|T|} 
+$$
 - **Confidence:** The likelihood of $B$ being purchased when $A$ is purchased.
-$$ \text{Confidence}(A \Rightarrow B) = \frac{\text{Support}(A \cup B)}{\text{Support}(A)} $$
+$$
+ \text{Confidence}(A \Rightarrow B) = \frac{\text{Support}(A \cup B)}{\text{Support}(A)} 
+$$
 
 ---
 

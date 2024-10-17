@@ -75,7 +75,9 @@ A **rule-based classifier** classifies records using a collection of "if...then.
 For a two-class problem, one class is treated as positive, and the other as negative. RIPPER builds the rule set for the positive class first:
 1. **Rule Growing**: Start with an empty rule and add conditions as long as they improve FOIL’s information gain.
 2. **Pruning**: Remove unnecessary conditions using **incremental reduced error pruning**. The pruning criterion is:
-   $$ v = \frac{p - n}{p + n} $$
+   $$
+ v = \frac{p - n}{p + n} 
+$$
    where $p$ is the number of positive examples and $n$ is the number of negative examples covered by the rule.
 - **Pruning method**: delete any final sequence of conditions that maximizes v
 ![Image](images/image_20241017161316.png)

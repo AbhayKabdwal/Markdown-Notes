@@ -76,25 +76,33 @@ To determine the "best" attribute for splitting, impurity measures are used.
 The Gini Index measures node impurity. For a node $t$, where $p_i$ is the proportion of class $i$ in node $t$, the Gini Index is defined as:
 
 $$
+
 \text{Gini}(t) = 1 - \sum_{i=1}^{c} p_i^2
+
 $$
 
 For a binary classification problem, the Gini Index can be simplified to:
 
 $$
+
 \text{Gini}(t) = 2p(1 - p)
+
 $$
 ![Image](images/image_20241017175436.png)
 
 #### Example:
 - For a node with class distribution $P(C1) = 0.5$ and $P(C2) = 0.5$, the Gini Index is:
 $$
+
 \text{Gini} = 1 - (0.5^2 + 0.5^2) = 0.5
+
 $$
 
 - For a pure node where $P(C1) = 1$ and $P(C2) = 0$, the Gini Index is:
 $$
+
 \text{Gini} = 1 - (1^2 + 0^2) = 0
+
 $$
 
 ---
@@ -104,18 +112,24 @@ $$
 Entropy is another measure of impurity, given by:
 
 $$
+
 \text{Entropy}(t) = - \sum_{i=1}^{c} p_i \log_2(p_i)
+
 $$
 
 #### Example:
 - For a node with $P(C1) = 0.5$ and $P(C2) = 0.5$, the entropy is:
 $$
+
 \text{Entropy} = - (0.5 \log_2(0.5) + 0.5 \log_2(0.5)) = 1
+
 $$
 
 - For a pure node where $P(C1) = 1$ and $P(C2) = 0$, the entropy is:
 $$
+
 \text{Entropy} = - (1 \log_2(1)) = 0
+
 $$
 
 ---
@@ -125,7 +139,9 @@ $$
 Information Gain is used to select the attribute that best splits the data. It is calculated as the reduction in entropy after a split:
 
 $$
+
 \text{Gain}(A) = \text{Entropy}(\text{parent}) - \sum_{i=1}^{k} \frac{|D_i|}{|D|} \text{Entropy}(D_i)
+
 $$
 
 where $D_i$ is a partition of the data after the split.
@@ -137,7 +153,9 @@ where $D_i$ is a partition of the data after the split.
 Misclassification Error is another impurity measure, defined as:
 
 $$
+
 \text{Error}(t) = 1 - \max(p_1, p_2, \dots, p_c)
+
 $$
 
 ---

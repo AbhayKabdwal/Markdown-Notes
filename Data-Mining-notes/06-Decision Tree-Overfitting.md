@@ -35,12 +35,20 @@ Using irrelevant attributes (e.g., 100 noisy variables from a uniform distributi
 ---
 ## Effect of Multiple Comparison Procedure
 -  Many algorithms employ the following greedy strategy:
-– Initial model: $$M$$
-– Alternative model: $$M’ = M ∪ γ$$
+– Initial model: $$
+M
+$$
+– Alternative model: $$
+M’ = M ∪ γ
+$$
 where γ is a component to be added to the model (e.g., a test condition of a decision tree)
-– Keep M’ if improvement, $$Δ(M,M’) > α$$
-- Often times, γ is chosen from a set of alternative components, $$Γ = \{{γ_{1} , γ_{2} , …,
-γ_{k} }\}$$
+– Keep M’ if improvement, $$
+Δ(M,M’) > α
+$$
+- Often times, γ is chosen from a set of alternative components, $$
+Γ = \{{γ_{1} , γ_{2} , …,
+γ_{k} }\}
+$$
 - If many alternatives are available, one may inadvertently add irrelevant
 components to the model, resulting in model overfitting
 ## Addressing Overfitting: Model Selection
@@ -52,7 +60,9 @@ components to the model, resulting in model overfitting
    - The principle of **Occam’s Razor** states that, given two models with similar generalization errors, the simpler model should be preferred. Complex models have a higher chance of overfitting.
 
 #### General Error Formula:
-$$ \text{Gen. Error}(\text{Model}) = \text{Train. Error}(\text{Model, Train. Data}) + \lambda \times \text{Complexity}(\text{Model}) $$
+$$
+ \text{Gen. Error}(\text{Model}) = \text{Train. Error}(\text{Model, Train. Data}) + \lambda \times \text{Complexity}(\text{Model}) 
+$$
 ![Image](images/image_20241017171801.png)
 
 ---

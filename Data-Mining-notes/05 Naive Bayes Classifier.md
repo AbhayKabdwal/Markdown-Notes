@@ -8,7 +8,9 @@
 ## **2. Bayes Theorem**
 Bayes Theorem provides a way to update the probability of a hypothesis $h$ given new evidence $D$:
 
-$$ P(h | D) = \frac{P(D | h) P(h)}{P(D)} $$
+$$
+ P(h | D) = \frac{P(D | h) P(h)}{P(D)} 
+$$
 
 where:
 - $P(h)$: Prior probability of hypothesis $h$.
@@ -30,7 +32,9 @@ If one ball is drawn at random and it is black, what is the probability that it 
   - $P(\text{Black | Bag II}) = \frac{3}{7} \approx 0.429$
 - Posterior probability using Bayes:
   
-$$ P(\text{Bag I | Black}) = \frac{P(\text{Black | Bag I}) P(\text{Bag I})}{P(\text{Black})} $$
+$$
+ P(\text{Bag I | Black}) = \frac{P(\text{Black | Bag I}) P(\text{Bag I})}{P(\text{Black})} 
+$$
 
 ---
 
@@ -39,7 +43,9 @@ $$ P(\text{Bag I | Black}) = \frac{P(\text{Black | Bag I}) P(\text{Bag I})}{P(\t
 - Assumes that the presence of a particular feature in a class is independent of the presence of any other feature.
 - Given a set of features $X = \{x_1, x_2, \ldots, x_n\}$, Naive Bayes calculates the probability of a class $c_j$ as:
 
-$$ P(c_j | X) = P(c_j) \prod_{i=1}^n P(x_i | c_j) $$
+$$
+ P(c_j | X) = P(c_j) \prod_{i=1}^n P(x_i | c_j) 
+$$
 
 where:
 - $P(c_j)$ is the prior probability of class $c_j$.
@@ -60,7 +66,9 @@ Given:
 
 We need to calculate $P(\text{Play | Today})$ using the Naive Bayes Classifier.
 
-$$ P(\text{Play | Today}) = P(\text{Play}) \cdot P(\text{Sunny | Play}) \cdot P(\text{Hot | Play}) \cdot P(\text{Normal | Play}) \cdot P(\text{Weak | Play}) $$
+$$
+ P(\text{Play | Today}) = P(\text{Play}) \cdot P(\text{Sunny | Play}) \cdot P(\text{Hot | Play}) \cdot P(\text{Normal | Play}) \cdot P(\text{Weak | Play}) 
+$$
 
 and similarly for $P(\text{No Play | Today})$.
 
@@ -70,7 +78,9 @@ and similarly for $P(\text{No Play | Today})$.
 ### **4.1 Handling Continuous Data**
 For continuous features, Naive Bayes assumes a **Gaussian distribution** for the values within each class. The probability density function is given by:
 
-$$ P(x | c_j) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} $$
+$$
+ P(x | c_j) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} 
+$$
 
 where:
 - $\mu$ is the mean of the feature values for class $c_j$.
