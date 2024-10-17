@@ -34,7 +34,7 @@ The classifier might use algorithms such as:
 - **k-Nearest Neighbors**
 
 #### Mathematical Representation:
-Let $D$ represent the dataset, $x_i$ the features of data point $i$, and $y_i$ the class label. A classifier $f(x_i) = y_i$ predicts the class label $y_i$ for unseen data.
+Let `D` represent the dataset, `x_i` the features of data point `i`, and `y_i` the class label. A classifier `f(x_i) = y_i` predicts the class label `y_i` for unseen data.
 
 ---
 
@@ -42,11 +42,11 @@ Let $D$ represent the dataset, $x_i$ the features of data point $i$, and $y_i$ t
 Regression is used to predict continuous values (also a form of supervised learning). For example, predicting house prices based on features such as location, size, and age.
 
 #### Example:
-To predict house prices ($Y$), we can build a regression model:
-$$
+To predict house prices (`Y`), we can build a regression model:
+```math
  Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n 
-$$
-Where $X_1, X_2, \dots, X_n$ are input features (such as square footage, number of bedrooms, etc.), and $\beta_0, \beta_1, \dots, \beta_n$ are the model coefficients.
+```
+Where `X_1, X_2, \dots, X_n` are input features (such as square footage, number of bedrooms, etc.), and `\beta_0, \beta_1, \dots, \beta_n` are the model coefficients.
 
 ---
 
@@ -57,10 +57,10 @@ Clustering is an unsupervised learning technique used to group similar data poin
 In market segmentation, customers can be grouped into clusters based on purchasing behavior, demographics, etc.
 
 #### Mathematical Representation:
-The goal of clustering is to minimize intra-cluster distance while maximizing inter-cluster distance. For instance, in **K-means clustering**, each cluster center $\mu_k$ is computed to minimize the squared distance from each data point $x_i$ to its nearest cluster center:
-$$
+The goal of clustering is to minimize intra-cluster distance while maximizing inter-cluster distance. For instance, in **K-means clustering**, each cluster center `\mu_k` is computed to minimize the squared distance from each data point `x_i` to its nearest cluster center:
+```math
  \text{minimize} \sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}(x_i \in C_k) \| x_i - \mu_k \|^2 
-$$
+```
 
 ---
 
@@ -68,21 +68,21 @@ $$
 Association rules discover relationships between variables in large datasets. These rules help find items that frequently co-occur, such as in market basket analysis (e.g., people who buy bread also tend to buy butter).
 
 #### Example:
-For a set of items $I$ and transactions $T$, an association rule can be expressed as:
-$$
+For a set of items `I` and transactions `T`, an association rule can be expressed as:
+```math
  A \Rightarrow B 
-$$
-Where $A$ and $B$ are itemsets, and the rule indicates that if $A$ is purchased, $B$ is likely to be purchased as well.
+```
+Where `A` and `B` are itemsets, and the rule indicates that if `A` is purchased, `B` is likely to be purchased as well.
 
 The key measures for association rules include:
 - **Support:** The frequency of the itemset in the dataset.
-$$
+```math
  \text{Support}(A) = \frac{|T(A)|}{|T|} 
-$$
-- **Confidence:** The likelihood of $B$ being purchased when $A$ is purchased.
-$$
+```
+- **Confidence:** The likelihood of `B` being purchased when `A` is purchased.
+```math
  \text{Confidence}(A \Rightarrow B) = \frac{\text{Support}(A \cup B)}{\text{Support}(A)} 
-$$
+```
 
 ---
 

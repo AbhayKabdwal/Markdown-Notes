@@ -13,7 +13,7 @@ Classification is a supervised learning task where the goal is to assign predefi
 ## General Approach for Classification Models
 
 1. **Training Phase:**
-   - A model is trained on labeled data, where the attribute set $\mathbf{x}$ is used to predict the class label $y$.
+   - A model is trained on labeled data, where the attribute set `\mathbf{x}` is used to predict the class label `y`.
 2. **Prediction Phase:**
    - The model is applied to unseen data to predict class labels.
 
@@ -43,9 +43,9 @@ Decision trees are a popular classification technique where data is split recurs
 ### Example of a Decision Tree:
 For a simple dataset, the attributes could be:
 
-- $\text{HomeOwner} \in \{Yes, No\}$
-- $\text{MaritalStatus} \in \{Single, Married, Divorced\}$
-- $\text{Income} \in \{< 80K, > 80K\}$
+- `\text{HomeOwner} \in \{Yes, No\}`
+- `\text{MaritalStatus} \in \{Single, Married, Divorced\}`
+- `\text{Income} \in \{< 80K, > 80K\}`
 
 The decision tree splits the data based on these attributes to classify a target variable, such as whether a person will default on a loan.
 
@@ -61,8 +61,8 @@ Decision tree algorithms include:
 - **SLIQ,SPRINT**
 
 ### Hunt’s Algorithm
-At each node $t$, the following procedure is applied:
-- If all records in $t$ belong to the same class $y_t$, make it a leaf node.
+At each node `t`, the following procedure is applied:
+- If all records in `t` belong to the same class `y_t`, make it a leaf node.
 - Otherwise, select an attribute to split the data and recursively apply the procedure.
 
 ---
@@ -73,37 +73,37 @@ To determine the "best" attribute for splitting, impurity measures are used.
 
 ### Gini Index
 
-The Gini Index measures node impurity. For a node $t$, where $p_i$ is the proportion of class $i$ in node $t$, the Gini Index is defined as:
+The Gini Index measures node impurity. For a node `t`, where `p_i` is the proportion of class `i` in node `t`, the Gini Index is defined as:
 
-$$
+```math
 
 \text{Gini}(t) = 1 - \sum_{i=1}^{c} p_i^2
 
-$$
+```
 
 For a binary classification problem, the Gini Index can be simplified to:
 
-$$
+```math
 
 \text{Gini}(t) = 2p(1 - p)
 
-$$
+```
 ![Image](images/image_20241017175436.png)
 
 #### Example:
-- For a node with class distribution $P(C1) = 0.5$ and $P(C2) = 0.5$, the Gini Index is:
-$$
+- For a node with class distribution `P(C1) = 0.5` and `P(C2) = 0.5`, the Gini Index is:
+```math
 
 \text{Gini} = 1 - (0.5^2 + 0.5^2) = 0.5
 
-$$
+```
 
-- For a pure node where $P(C1) = 1$ and $P(C2) = 0$, the Gini Index is:
-$$
+- For a pure node where `P(C1) = 1` and `P(C2) = 0`, the Gini Index is:
+```math
 
 \text{Gini} = 1 - (1^2 + 0^2) = 0
 
-$$
+```
 
 ---
 
@@ -111,26 +111,26 @@ $$
 
 Entropy is another measure of impurity, given by:
 
-$$
+```math
 
 \text{Entropy}(t) = - \sum_{i=1}^{c} p_i \log_2(p_i)
 
-$$
+```
 
 #### Example:
-- For a node with $P(C1) = 0.5$ and $P(C2) = 0.5$, the entropy is:
-$$
+- For a node with `P(C1) = 0.5` and `P(C2) = 0.5`, the entropy is:
+```math
 
 \text{Entropy} = - (0.5 \log_2(0.5) + 0.5 \log_2(0.5)) = 1
 
-$$
+```
 
-- For a pure node where $P(C1) = 1$ and $P(C2) = 0$, the entropy is:
-$$
+- For a pure node where `P(C1) = 1` and `P(C2) = 0`, the entropy is:
+```math
 
 \text{Entropy} = - (1 \log_2(1)) = 0
 
-$$
+```
 
 ---
 
@@ -138,13 +138,13 @@ $$
 
 Information Gain is used to select the attribute that best splits the data. It is calculated as the reduction in entropy after a split:
 
-$$
+```math
 
 \text{Gain}(A) = \text{Entropy}(\text{parent}) - \sum_{i=1}^{k} \frac{|D_i|}{|D|} \text{Entropy}(D_i)
 
-$$
+```
 
-where $D_i$ is a partition of the data after the split.
+where `D_i` is a partition of the data after the split.
 
 ---
 
@@ -152,17 +152,17 @@ where $D_i$ is a partition of the data after the split.
 
 Misclassification Error is another impurity measure, defined as:
 
-$$
+```math
 
 \text{Error}(t) = 1 - \max(p_1, p_2, \dots, p_c)
 
-$$
+```
 
 ---
 
 ## Handling Continuous Attributes
 
-For continuous attributes like "income," decision trees often use binary splits of the form $A < v$ or $A \geq v$, where $v$ is a threshold value. To find the optimal split:
+For continuous attributes like "income," decision trees often use binary splits of the form `A < v` or `A \geq v`, where `v` is a threshold value. To find the optimal split:
 
 1. Sort the attribute values.
 2. Evaluate potential splits based on Gini Index, Entropy, or other criteria.

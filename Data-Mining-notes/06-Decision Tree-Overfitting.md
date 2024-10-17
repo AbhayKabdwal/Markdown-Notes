@@ -35,20 +35,20 @@ Using irrelevant attributes (e.g., 100 noisy variables from a uniform distributi
 ---
 ## Effect of Multiple Comparison Procedure
 -  Many algorithms employ the following greedy strategy:
-– Initial model: $$
+– Initial model: ```math
 M
-$$
-– Alternative model: $$
+```
+– Alternative model: ```math
 M’ = M ∪ γ
-$$
+```
 where γ is a component to be added to the model (e.g., a test condition of a decision tree)
-– Keep M’ if improvement, $$
+– Keep M’ if improvement, ```math
 Δ(M,M’) > α
-$$
-- Often times, γ is chosen from a set of alternative components, $$
+```
+- Often times, γ is chosen from a set of alternative components, ```math
 Γ = \{{γ_{1} , γ_{2} , …,
 γ_{k} }\}
-$$
+```
 - If many alternatives are available, one may inadvertently add irrelevant
 components to the model, resulting in model overfitting
 ## Addressing Overfitting: Model Selection
@@ -60,9 +60,9 @@ components to the model, resulting in model overfitting
    - The principle of **Occam’s Razor** states that, given two models with similar generalization errors, the simpler model should be preferred. Complex models have a higher chance of overfitting.
 
 #### General Error Formula:
-$$
+```math
  \text{Gen. Error}(\text{Model}) = \text{Train. Error}(\text{Model, Train. Data}) + \lambda \times \text{Complexity}(\text{Model}) 
-$$
+```
 ![Image](images/image_20241017171801.png)
 
 ---
@@ -73,7 +73,7 @@ $$
    - Stop tree growth early if:
      - All instances belong to the same class.
      - Attribute values for all instances are identical.
-     - Class distribution does not improve with further splitting (e.g., using $\chi^2$ test or Gini index).
+     - Class distribution does not improve with further splitting (e.g., using `\chi^2` test or Gini index).
 
 2. **Post-Pruning**:
    - Build the tree fully and then prune:
@@ -88,12 +88,12 @@ $$
 ## Model Evaluation
 
 1. **Holdout Method**: 
-   - Reserve a portion of the dataset (e.g., $k\%$) for training and the rest for testing.
+   - Reserve a portion of the dataset (e.g., `k\%`) for training and the rest for testing.
 
 2. **Cross-Validation**:
-   - Split the data into $k$ disjoint subsets. Train on $k-1$ subsets and test on the remaining subset. Repeat this $k$ times for each subset. Common values for $k$ include 5 and 10 (e.g., **k-fold cross-validation**).
+   - Split the data into `k` disjoint subsets. Train on `k-1` subsets and test on the remaining subset. Repeat this `k` times for each subset. Common values for `k` include 5 and 10 (e.g., **k-fold cross-validation**).
 3. **Leave-One-Out Cross-Validation (LOOCV)**:
-   - A special case of cross-validation where $k = n$, where $n$ is the number of data points. The model is trained on all data except one point, and this is repeated for all points.
+   - A special case of cross-validation where `k = n`, where `n` is the number of data points. The model is trained on all data except one point, and this is repeated for all points.
 
 4. **Stratified Cross-Validation**:
    - Ensures that each fold has the same class distribution as the full dataset, which is especially useful for imbalanced data.
