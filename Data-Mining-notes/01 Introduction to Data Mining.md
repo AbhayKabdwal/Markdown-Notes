@@ -44,9 +44,9 @@ Regression is used to predict continuous values (also a form of supervised learn
 #### Example:
 To predict house prices (`Y`), we can build a regression model:
 ```math
- Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_n X_n 
+ Y = β_0 + β_1 X_1 + β_2 X_2 + *s + β_n X_n 
 ```
-Where `X_1, X_2, \dots, X_n` are input features (such as square footage, number of bedrooms, etc.), and `\beta_0, \beta_1, \dots, \beta_n` are the model coefficients.
+Where `X_1, X_2, \dots, X_n` are input features (such as square footage, number of bedrooms, etc.), and `β_0, β_1, \dots, β_n` are the model coefficients.
 
 ---
 
@@ -59,7 +59,7 @@ In market segmentation, customers can be grouped into clusters based on purchasi
 #### Mathematical Representation:
 The goal of clustering is to minimize intra-cluster distance while maximizing inter-cluster distance. For instance, in **K-means clustering**, each cluster center `\mu_k` is computed to minimize the squared distance from each data point `x_i` to its nearest cluster center:
 ```math
- \text{minimize} \sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}(x_i \in C_k) \| x_i - \mu_k \|^2 
+ \text{minimize} sum of_{i=1}^{n} sum of_{k=1}^{K} \mathbf{1}(x_i \in C_k) \| x_i - \mu_k \|^2 
 ```
 
 ---
@@ -77,7 +77,7 @@ Where `A` and `B` are itemsets, and the rule indicates that if `A` is purchased,
 The key measures for association rules include:
 - **Support:** The frequency of the itemset in the dataset.
 ```math
- \text{Support}(A) = \frac{|T(A)|}{|T|} 
+ \text{Support}(A) = (|T(A)| / |T|) 
 ```
 - **Confidence:** The likelihood of `B` being purchased when `A` is purchased.
 ```math

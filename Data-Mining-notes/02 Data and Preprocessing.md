@@ -22,7 +22,7 @@ Data is a collection of objects and their attributes. An **attribute** is a prop
    Consists of a collection of records, each with a fixed set of attributes.
    
 2. **Data Matrix:** 
-   When data objects have the same set of numeric attributes, they can be represented as points in a multidimensional space. A data matrix is an `m \times n` matrix where `m` is the number of records and `n` is the number of attributes.
+   When data objects have the same set of numeric attributes, they can be represented as points in a multidimensional space. A data matrix is an `m x n` matrix where `m` is the number of records and `n` is the number of attributes.
 
 3. **Document Data:**
    - Each document is represented as a term vector, with each term being a component (attribute). The value of each component is the number of times the term appears in the document.
@@ -51,13 +51,13 @@ Data is a collection of objects and their attributes. An **attribute** is a prop
 ## Attribute Properties
 
 The operations applicable to different types of attributes depend on their properties:
-- **Distinctness:** `=, \neq`
+- **Distinctness:** `=, ≠`
 - **Order:** `<, >`
 - **Meaningful differences:** `+, -`
 - **Ratios are meaningful:** `*, /`
 
 ### Example:
-For **Nominal** attributes, only distinctness (`=, \neq`) is meaningful, while for **Ratio** attributes, all operations (`+, -, *, /`) are valid.
+For **Nominal** attributes, only distinctness (`=, ≠`) is meaningful, while for **Ratio** attributes, all operations (`+, -, *, /`) are valid.
 
 ---
 

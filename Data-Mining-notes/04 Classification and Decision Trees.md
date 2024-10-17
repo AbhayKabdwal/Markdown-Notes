@@ -77,7 +77,7 @@ The Gini Index measures node impurity. For a node `t`, where `p_i` is the propor
 
 ```math
 
-\text{Gini}(t) = 1 - \sum_{i=1}^{c} p_i^2
+\text{Gini}(t) = 1 - sum of_{i=1}^{c} p_i^2
 
 ```
 
@@ -113,7 +113,7 @@ Entropy is another measure of impurity, given by:
 
 ```math
 
-\text{Entropy}(t) = - \sum_{i=1}^{c} p_i \log_2(p_i)
+\text{Entropy}(t) = - sum of_{i=1}^{c} p_i \log_2(p_i)
 
 ```
 
@@ -140,7 +140,7 @@ Information Gain is used to select the attribute that best splits the data. It i
 
 ```math
 
-\text{Gain}(A) = \text{Entropy}(\text{parent}) - \sum_{i=1}^{k} \frac{|D_i|}{|D|} \text{Entropy}(D_i)
+\text{Gain}(A) = \text{Entropy}(\text{parent}) - sum of_{i=1}^{k} (|D_i| / |D|) \text{Entropy}(D_i)
 
 ```
 
@@ -162,7 +162,7 @@ Misclassification Error is another impurity measure, defined as:
 
 ## Handling Continuous Attributes
 
-For continuous attributes like "income," decision trees often use binary splits of the form `A < v` or `A \geq v`, where `v` is a threshold value. To find the optimal split:
+For continuous attributes like "income," decision trees often use binary splits of the form `A < v` or `A >= v`, where `v` is a threshold value. To find the optimal split:
 
 1. Sort the attribute values.
 2. Evaluate potential splits based on Gini Index, Entropy, or other criteria.

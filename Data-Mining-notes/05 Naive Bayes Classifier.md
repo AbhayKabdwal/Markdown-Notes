@@ -9,7 +9,7 @@
 Bayes Theorem provides a way to update the probability of a hypothesis `h` given new evidence `D`:
 
 ```math
- P(h | D) = \frac{P(D | h) P(h)}{P(D)} 
+ P(h | D) = (P(D | h) P(h) / P(D)) 
 ```
 
 where:
@@ -26,10 +26,10 @@ Two bags are given:
 If one ball is drawn at random and it is black, what is the probability that it was drawn from **Bag I**?
 
 - Prior probabilities:
-  - `P(\text{Bag I}) = \frac{1}{2}`, `P(\text{Bag II}) = \frac{1}{2}`
+  - `P(\text{Bag I}) = (1 / 2)`, `P(\text{Bag II}) = (1 / 2)`
 - Likelihoods:
-  - `P(\text{Black | Bag I}) = \frac{6}{10} = 0.6`
-  - `P(\text{Black | Bag II}) = \frac{3}{7} \approx 0.429`
+  - `P(\text{Black | Bag I}) = (6 / 10) = 0.6`
+  - `P(\text{Black | Bag II}) = (3 / 7) ≈ 0.429`
 - Posterior probability using Bayes:
   
 ```math
@@ -41,7 +41,7 @@ If one ball is drawn at random and it is black, what is the probability that it 
 ## **3. Naive Bayes Classifier**
 ### **3.1 Naive Bayes Assumption**
 - Assumes that the presence of a particular feature in a class is independent of the presence of any other feature.
-- Given a set of features `X = \{x_1, x_2, \ldots, x_n\}`, Naive Bayes calculates the probability of a class `c_j` as:
+- Given a set of features `X = \{x_1, x_2, ..., x_n\}`, Naive Bayes calculates the probability of a class `c_j` as:
 
 ```math
  P(c_j | X) = P(c_j) \prod_{i=1}^n P(x_i | c_j) 
@@ -67,7 +67,7 @@ Given:
 We need to calculate `P(\text{Play | Today})` using the Naive Bayes Classifier.
 
 ```math
- P(\text{Play | Today}) = P(\text{Play}) \cdot P(\text{Sunny | Play}) \cdot P(\text{Hot | Play}) \cdot P(\text{Normal | Play}) \cdot P(\text{Weak | Play}) 
+ P(\text{Play | Today}) = P(\text{Play}) * P(\text{Sunny | Play}) * P(\text{Hot | Play}) * P(\text{Normal | Play}) * P(\text{Weak | Play}) 
 ```
 
 and similarly for `P(\text{No Play | Today})`.
@@ -79,7 +79,7 @@ and similarly for `P(\text{No Play | Today})`.
 For continuous features, Naive Bayes assumes a **Gaussian distribution** for the values within each class. The probability density function is given by:
 
 ```math
- P(x | c_j) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}} 
+ P(x | c_j) = \frac{1}{sqrt(2π\sigma^2)} e^{-((x - \mu)^2 / 2\sigma^2)} 
 ```
 
 where:

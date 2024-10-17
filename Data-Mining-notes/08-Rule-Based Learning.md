@@ -1,19 +1,19 @@
 ### Overview
 A **rule-based classifier** classifies records using a collection of "if...then..." rules. Each rule is of the form:
-- **Rule**: `(\text{Condition}) \rightarrow y`
+- **Rule**: `(\text{Condition}) arrow y`
    - **Condition**: A conjunction of attribute tests.
    - **`y`**: The class label.
 
 #### Example of Rules:
-- `(\text{Give Birth} = \text{no}) \land (\text{Can Fly} = \text{yes}) \rightarrow \text{Birds}`
-- `(\text{Taxable Income} < 50K) \land (\text{Refund} = \text{Yes}) \rightarrow \text{Evade} = \text{No}`
+- `(\text{Give Birth} = \text{no}) \land (\text{Can Fly} = \text{yes}) arrow \text{Birds}`
+- `(\text{Taxable Income} < 50K) \land (\text{Refund} = \text{Yes}) arrow \text{Evade} = \text{No}`
 
 ---
 
 ## Rule Characteristics
 
 1. **Coverage**: The fraction of records that satisfy the condition of the rule.
-   - Example: For the rule `(\text{Status} = \text{Single}) \rightarrow \text{No}`, coverage could be `40\%`.
+   - Example: For the rule `(\text{Status} = \text{Single}) arrow \text{No}`, coverage could be `40\%`.
    
 2. **Accuracy**: The fraction of records satisfying the condition that also satisfy the conclusion.
    - Example: Accuracy of `50\%` means half of the records meeting the condition also match the class label.
@@ -76,7 +76,7 @@ For a two-class problem, one class is treated as positive, and the other as nega
 1. **Rule Growing**: Start with an empty rule and add conditions as long as they improve FOIL’s information gain.
 2. **Pruning**: Remove unnecessary conditions using **incremental reduced error pruning**. The pruning criterion is:
    ```math
- v = \frac{p - n}{p + n} 
+ v = (p - n / p + n) 
 ```
    where `p` is the number of positive examples and `n` is the number of negative examples covered by the rule.
 - **Pruning method**: delete any final sequence of conditions that maximizes v
@@ -86,7 +86,7 @@ For a two-class problem, one class is treated as positive, and the other as nega
 
 ## Indirect Method: C4.5rules
 
-This method extracts rules from an unpruned decision tree. For each rule `r: A \rightarrow y`, alternative rules `r': A' \rightarrow y` are considered, where `A'` removes one conjunct from `A`. The rule with the lowest pessimistic error is selected.
+This method extracts rules from an unpruned decision tree. For each rule `r: A arrow y`, alternative rules `r': A' arrow y` are considered, where `A'` removes one conjunct from `A`. The rule with the lowest pessimistic error is selected.
 
 ---
 

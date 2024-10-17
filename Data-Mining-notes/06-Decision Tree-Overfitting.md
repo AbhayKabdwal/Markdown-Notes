@@ -61,7 +61,7 @@ components to the model, resulting in model overfitting
 
 #### General Error Formula:
 ```math
- \text{Gen. Error}(\text{Model}) = \text{Train. Error}(\text{Model, Train. Data}) + \lambda \times \text{Complexity}(\text{Model}) 
+ \text{Gen. Error}(\text{Model}) = \text{Train. Error}(\text{Model, Train. Data}) + \lambda x \text{Complexity}(\text{Model}) 
 ```
 ![Image](images/image_20241017171801.png)
 
