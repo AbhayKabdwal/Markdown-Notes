@@ -6,17 +6,15 @@
 ---
 
 ## **2. Bayes Theorem**
-Bayes Theorem provides a way to update the probability of a hypothesis `h` given new evidence `D`:
+Bayes Theorem provides a way to update the probability of a hypothesis ![LaTeX Equation](https://latex.codecogs.com/png.latex?h) given new evidence ![LaTeX Equation](https://latex.codecogs.com/png.latex?D):
 
-```math
- P(h | D) = (P(D | h) P(h) / P(D)) 
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%20P%28h%20%7C%20D%29%20%3D%20%5Cfrac%7BP%28D%20%7C%20h%29%20P%28h%29%7D%7BP%28D%29%7D%20)
 
 where:
-- `P(h)`: Prior probability of hypothesis `h`.
-- `P(D)`: Prior probability of the data `D`.
-- `P(D | h)`: Likelihood of observing data `D` given that `h` holds.
-- `P(h | D)`: Posterior probability that `h` holds given the observed data `D`.
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28h%29): Prior probability of hypothesis ![LaTeX Equation](https://latex.codecogs.com/png.latex?h).
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28D%29): Prior probability of the data ![LaTeX Equation](https://latex.codecogs.com/png.latex?D).
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28D%20%7C%20h%29): Likelihood of observing data ![LaTeX Equation](https://latex.codecogs.com/png.latex?D) given that ![LaTeX Equation](https://latex.codecogs.com/png.latex?h) holds.
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28h%20%7C%20D%29): Posterior probability that ![LaTeX Equation](https://latex.codecogs.com/png.latex?h) holds given the observed data ![LaTeX Equation](https://latex.codecogs.com/png.latex?D).
 
 **Example**: 
 Two bags are given:
@@ -26,35 +24,31 @@ Two bags are given:
 If one ball is drawn at random and it is black, what is the probability that it was drawn from **Bag I**?
 
 - Prior probabilities:
-  - `P(\text{Bag I}) = (1 / 2)`, `P(\text{Bag II}) = (1 / 2)`
+  - ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28%5Ctext%7BBag%20I%7D%29%20%3D%20%5Cfrac%7B1%7D%7B2%7D), ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28%5Ctext%7BBag%20II%7D%29%20%3D%20%5Cfrac%7B1%7D%7B2%7D)
 - Likelihoods:
-  - `P(\text{Black | Bag I}) = (6 / 10) = 0.6`
-  - `P(\text{Black | Bag II}) = (3 / 7) ≈ 0.429`
+  - ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28%5Ctext%7BBlack%20%7C%20Bag%20I%7D%29%20%3D%20%5Cfrac%7B6%7D%7B10%7D%20%3D%200.6)
+  - ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28%5Ctext%7BBlack%20%7C%20Bag%20II%7D%29%20%3D%20%5Cfrac%7B3%7D%7B7%7D%20%5Capprox%200.429)
 - Posterior probability using Bayes:
   
-```math
- P(\text{Bag I | Black}) = \frac{P(\text{Black | Bag I}) P(\text{Bag I})}{P(\text{Black})} 
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%20P%28%5Ctext%7BBag%20I%20%7C%20Black%7D%29%20%3D%20%5Cfrac%7BP%28%5Ctext%7BBlack%20%7C%20Bag%20I%7D%29%20P%28%5Ctext%7BBag%20I%7D%29%7D%7BP%28%5Ctext%7BBlack%7D%29%7D%20)
 
 ---
 
 ## **3. Naive Bayes Classifier**
 ### **3.1 Naive Bayes Assumption**
 - Assumes that the presence of a particular feature in a class is independent of the presence of any other feature.
-- Given a set of features `X = \{x_1, x_2, ..., x_n\}`, Naive Bayes calculates the probability of a class `c_j` as:
+- Given a set of features ![LaTeX Equation](https://latex.codecogs.com/png.latex?X%20%3D%20%5C%7Bx_1%2C%20x_2%2C%20%5Cldots%2C%20x_n%5C%7D), Naive Bayes calculates the probability of a class ![LaTeX Equation](https://latex.codecogs.com/png.latex?c_j) as:
 
-```math
- P(c_j | X) = P(c_j) \prod_{i=1}^n P(x_i | c_j) 
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%20P%28c_j%20%7C%20X%29%20%3D%20P%28c_j%29%20%5Cprod_%7Bi%3D1%7D%5En%20P%28x_i%20%7C%20c_j%29%20)
 
 where:
-- `P(c_j)` is the prior probability of class `c_j`.
-- `P(x_i | c_j)` is the likelihood of feature `x_i` given class `c_j`.
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28c_j%29) is the prior probability of class ![LaTeX Equation](https://latex.codecogs.com/png.latex?c_j).
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28x_i%20%7C%20c_j%29) is the likelihood of feature ![LaTeX Equation](https://latex.codecogs.com/png.latex?x_i) given class ![LaTeX Equation](https://latex.codecogs.com/png.latex?c_j).
 
 ### **3.2 Steps for Classification**
-1. Compute the prior probabilities `P(c_j)` for each class.
-2. Compute the likelihood `P(x_i | c_j)` for each feature `x_i` given class `c_j`.
-3. Calculate the posterior probability `P(c_j | X)` for each class.
+1. Compute the prior probabilities ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28c_j%29) for each class.
+2. Compute the likelihood ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28x_i%20%7C%20c_j%29) for each feature ![LaTeX Equation](https://latex.codecogs.com/png.latex?x_i) given class ![LaTeX Equation](https://latex.codecogs.com/png.latex?c_j).
+3. Calculate the posterior probability ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28c_j%20%7C%20X%29) for each class.
 4. Assign the class label with the highest posterior probability to the new sample.
 
 ### **3.3 Example:**
@@ -62,15 +56,13 @@ Consider a dataset where we want to classify if a day is suitable for playing ba
 **Outlook**, **Temperature**, **Humidity**, and **Wind**.
 
 Given:
-- Today’s conditions are `(\text{Sunny}, \text{Hot}, \text{Normal}, \text{Weak})`.
+- Today’s conditions are ![LaTeX Equation](https://latex.codecogs.com/png.latex?%28%5Ctext%7BSunny%7D%2C%20%5Ctext%7BHot%7D%2C%20%5Ctext%7BNormal%7D%2C%20%5Ctext%7BWeak%7D%29).
 
-We need to calculate `P(\text{Play | Today})` using the Naive Bayes Classifier.
+We need to calculate ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28%5Ctext%7BPlay%20%7C%20Today%7D%29) using the Naive Bayes Classifier.
 
-```math
- P(\text{Play | Today}) = P(\text{Play}) * P(\text{Sunny | Play}) * P(\text{Hot | Play}) * P(\text{Normal | Play}) * P(\text{Weak | Play}) 
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%20P%28%5Ctext%7BPlay%20%7C%20Today%7D%29%20%3D%20P%28%5Ctext%7BPlay%7D%29%20%5Ccdot%20P%28%5Ctext%7BSunny%20%7C%20Play%7D%29%20%5Ccdot%20P%28%5Ctext%7BHot%20%7C%20Play%7D%29%20%5Ccdot%20P%28%5Ctext%7BNormal%20%7C%20Play%7D%29%20%5Ccdot%20P%28%5Ctext%7BWeak%20%7C%20Play%7D%29%20)
 
-and similarly for `P(\text{No Play | Today})`.
+and similarly for ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28%5Ctext%7BNo%20Play%20%7C%20Today%7D%29).
 
 ---
 
@@ -78,13 +70,11 @@ and similarly for `P(\text{No Play | Today})`.
 ### **4.1 Handling Continuous Data**
 For continuous features, Naive Bayes assumes a **Gaussian distribution** for the values within each class. The probability density function is given by:
 
-```math
- P(x | c_j) = \frac{1}{sqrt(2π\sigma^2)} e^{-((x - \mu)^2 / 2\sigma^2)} 
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%20P%28x%20%7C%20c_j%29%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%5Csigma%5E2%7D%7D%20e%5E%7B-%5Cfrac%7B%28x%20-%20%5Cmu%29%5E2%7D%7B2%5Csigma%5E2%7D%7D%20)
 
 where:
-- `\mu` is the mean of the feature values for class `c_j`.
-- `\sigma` is the standard deviation of the feature values for class `c_j`.
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Cmu) is the mean of the feature values for class ![LaTeX Equation](https://latex.codecogs.com/png.latex?c_j).
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Csigma) is the standard deviation of the feature values for class ![LaTeX Equation](https://latex.codecogs.com/png.latex?c_j).
 
 
 ---

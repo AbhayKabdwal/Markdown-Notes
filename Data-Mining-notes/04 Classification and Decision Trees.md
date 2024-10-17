@@ -13,7 +13,7 @@ Classification is a supervised learning task where the goal is to assign predefi
 ## General Approach for Classification Models
 
 1. **Training Phase:**
-   - A model is trained on labeled data, where the attribute set `\mathbf{x}` is used to predict the class label `y`.
+   - A model is trained on labeled data, where the attribute set ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Cmathbf%7Bx%7D) is used to predict the class label ![LaTeX Equation](https://latex.codecogs.com/png.latex?y).
 2. **Prediction Phase:**
    - The model is applied to unseen data to predict class labels.
 
@@ -43,9 +43,9 @@ Decision trees are a popular classification technique where data is split recurs
 ### Example of a Decision Tree:
 For a simple dataset, the attributes could be:
 
-- `\text{HomeOwner} \in \{Yes, No\}`
-- `\text{MaritalStatus} \in \{Single, Married, Divorced\}`
-- `\text{Income} \in \{< 80K, > 80K\}`
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ctext%7BHomeOwner%7D%20%5Cin%20%5C%7BYes%2C%20No%5C%7D)
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ctext%7BMaritalStatus%7D%20%5Cin%20%5C%7BSingle%2C%20Married%2C%20Divorced%5C%7D)
+- ![LaTeX Equation](https://latex.codecogs.com/png.latex?%5Ctext%7BIncome%7D%20%5Cin%20%5C%7B%3C%2080K%2C%20%3E%2080K%5C%7D)
 
 The decision tree splits the data based on these attributes to classify a target variable, such as whether a person will default on a loan.
 
@@ -61,8 +61,8 @@ Decision tree algorithms include:
 - **SLIQ,SPRINT**
 
 ### Hunt’s Algorithm
-At each node `t`, the following procedure is applied:
-- If all records in `t` belong to the same class `y_t`, make it a leaf node.
+At each node ![LaTeX Equation](https://latex.codecogs.com/png.latex?t), the following procedure is applied:
+- If all records in ![LaTeX Equation](https://latex.codecogs.com/png.latex?t) belong to the same class ![LaTeX Equation](https://latex.codecogs.com/png.latex?y_t), make it a leaf node.
 - Otherwise, select an attribute to split the data and recursively apply the procedure.
 
 ---
@@ -73,37 +73,21 @@ To determine the "best" attribute for splitting, impurity measures are used.
 
 ### Gini Index
 
-The Gini Index measures node impurity. For a node `t`, where `p_i` is the proportion of class `i` in node `t`, the Gini Index is defined as:
+The Gini Index measures node impurity. For a node ![LaTeX Equation](https://latex.codecogs.com/png.latex?t), where ![LaTeX Equation](https://latex.codecogs.com/png.latex?p_i) is the proportion of class ![LaTeX Equation](https://latex.codecogs.com/png.latex?i) in node ![LaTeX Equation](https://latex.codecogs.com/png.latex?t), the Gini Index is defined as:
 
-```math
-
-\text{Gini}(t) = 1 - sum of_{i=1}^{c} p_i^2
-
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BGini%7D%28t%29%20%3D%201%20-%20%5Csum_%7Bi%3D1%7D%5E%7Bc%7D%20p_i%5E2%0A)
 
 For a binary classification problem, the Gini Index can be simplified to:
 
-```math
-
-\text{Gini}(t) = 2p(1 - p)
-
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BGini%7D%28t%29%20%3D%202p%281%20-%20p%29%0A)
 ![Image](images/image_20241017175436.png)
 
 #### Example:
-- For a node with class distribution `P(C1) = 0.5` and `P(C2) = 0.5`, the Gini Index is:
-```math
+- For a node with class distribution ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C1%29%20%3D%200.5) and ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C2%29%20%3D%200.5), the Gini Index is:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BGini%7D%20%3D%201%20-%20%280.5%5E2%20%2B%200.5%5E2%29%20%3D%200.5%0A)
 
-\text{Gini} = 1 - (0.5^2 + 0.5^2) = 0.5
-
-```
-
-- For a pure node where `P(C1) = 1` and `P(C2) = 0`, the Gini Index is:
-```math
-
-\text{Gini} = 1 - (1^2 + 0^2) = 0
-
-```
+- For a pure node where ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C1%29%20%3D%201) and ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C2%29%20%3D%200), the Gini Index is:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BGini%7D%20%3D%201%20-%20%281%5E2%20%2B%200%5E2%29%20%3D%200%0A)
 
 ---
 
@@ -111,26 +95,14 @@ For a binary classification problem, the Gini Index can be simplified to:
 
 Entropy is another measure of impurity, given by:
 
-```math
-
-\text{Entropy}(t) = - sum of_{i=1}^{c} p_i \log_2(p_i)
-
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BEntropy%7D%28t%29%20%3D%20-%20%5Csum_%7Bi%3D1%7D%5E%7Bc%7D%20p_i%20%5Clog_2%28p_i%29%0A)
 
 #### Example:
-- For a node with `P(C1) = 0.5` and `P(C2) = 0.5`, the entropy is:
-```math
+- For a node with ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C1%29%20%3D%200.5) and ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C2%29%20%3D%200.5), the entropy is:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BEntropy%7D%20%3D%20-%20%280.5%20%5Clog_2%280.5%29%20%2B%200.5%20%5Clog_2%280.5%29%29%20%3D%201%0A)
 
-\text{Entropy} = - (0.5 \log_2(0.5) + 0.5 \log_2(0.5)) = 1
-
-```
-
-- For a pure node where `P(C1) = 1` and `P(C2) = 0`, the entropy is:
-```math
-
-\text{Entropy} = - (1 \log_2(1)) = 0
-
-```
+- For a pure node where ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C1%29%20%3D%201) and ![LaTeX Equation](https://latex.codecogs.com/png.latex?P%28C2%29%20%3D%200), the entropy is:
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BEntropy%7D%20%3D%20-%20%281%20%5Clog_2%281%29%29%20%3D%200%0A)
 
 ---
 
@@ -138,13 +110,9 @@ Entropy is another measure of impurity, given by:
 
 Information Gain is used to select the attribute that best splits the data. It is calculated as the reduction in entropy after a split:
 
-```math
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BGain%7D%28A%29%20%3D%20%5Ctext%7BEntropy%7D%28%5Ctext%7Bparent%7D%29%20-%20%5Csum_%7Bi%3D1%7D%5E%7Bk%7D%20%5Cfrac%7B%7CD_i%7C%7D%7B%7CD%7C%7D%20%5Ctext%7BEntropy%7D%28D_i%29%0A)
 
-\text{Gain}(A) = \text{Entropy}(\text{parent}) - sum of_{i=1}^{k} (|D_i| / |D|) \text{Entropy}(D_i)
-
-```
-
-where `D_i` is a partition of the data after the split.
+where ![LaTeX Equation](https://latex.codecogs.com/png.latex?D_i) is a partition of the data after the split.
 
 ---
 
@@ -152,17 +120,13 @@ where `D_i` is a partition of the data after the split.
 
 Misclassification Error is another impurity measure, defined as:
 
-```math
-
-\text{Error}(t) = 1 - \max(p_1, p_2, \dots, p_c)
-
-```
+![LaTeX Equation](https://latex.codecogs.com/png.latex?%0A%5Ctext%7BError%7D%28t%29%20%3D%201%20-%20%5Cmax%28p_1%2C%20p_2%2C%20%5Cdots%2C%20p_c%29%0A)
 
 ---
 
 ## Handling Continuous Attributes
 
-For continuous attributes like "income," decision trees often use binary splits of the form `A < v` or `A >= v`, where `v` is a threshold value. To find the optimal split:
+For continuous attributes like "income," decision trees often use binary splits of the form ![LaTeX Equation](https://latex.codecogs.com/png.latex?A%20%3C%20v) or ![LaTeX Equation](https://latex.codecogs.com/png.latex?A%20%5Cgeq%20v), where ![LaTeX Equation](https://latex.codecogs.com/png.latex?v) is a threshold value. To find the optimal split:
 
 1. Sort the attribute values.
 2. Evaluate potential splits based on Gini Index, Entropy, or other criteria.
